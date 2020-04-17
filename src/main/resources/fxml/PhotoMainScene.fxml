@@ -8,7 +8,6 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -17,80 +16,83 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefWidth="860.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.dprotuli.controller.PhotoMainFXMLController">
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.dprotuli.controller.PhotoMainFXMLController">
    <children>
-      <VBox AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <HBox alignment="CENTER_LEFT">
          <children>
-            <HBox alignment="CENTER_LEFT">
-               <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/logo.png" />
-                     </image>
-                  </ImageView>
-                  <Label alignment="BASELINE_CENTER" contentDisplay="CENTER" text="Photo App">
-                     <font>
-                        <Font name="Comic Sans MS Bold" size="36.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                     <effect>
-                        <DropShadow color="#00000066" height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0" />
-                     </effect>
-                  </Label>
-               </children>
-            </HBox>
-            <ScrollPane fitToWidth="true">
-               <content>
-                  <TilePane fx:id="tilePane" hgap="5.0" prefHeight="400.0" prefWidth="200.0" vgap="5.0" />
-               </content>
-            </ScrollPane>
-            <GridPane>
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Label text="Name:" />
-                  <Label text="Description:" GridPane.rowIndex="1" />
-                  <TextField fx:id="nameTextField" GridPane.columnIndex="1" />
-                  <TextField fx:id="descriptionTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-               </children>
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin>
-            </GridPane>
-            <HBox alignment="BASELINE_LEFT" prefHeight="44.0" prefWidth="830.0">
-               <children>
-                  <Button fx:id="addPictureButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addPictureAction" text="Add">
-                     <HBox.margin>
-                        <Insets left="10.0" right="5.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="deletePictureButton" mnemonicParsing="false" onAction="#deletePictureAction" text="Delete">
-                     <HBox.margin>
-                        <Insets left="5.0" right="5.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="modifyPictureButton" mnemonicParsing="false" onAction="#modifyPictureAction" text="Modify">
-                     <HBox.margin>
-                        <Insets left="5.0" right="10.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <VBox.margin>
-                  <Insets top="30.0" />
-               </VBox.margin>
-            </HBox>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+            </ImageView>
+            <Label alignment="BASELINE_CENTER" contentDisplay="CENTER" text="Photo App">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="36.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+               <effect>
+                  <DropShadow color="#00000066" height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0" />
+               </effect>
+            </Label>
          </children>
-      </VBox>
+         <VBox.margin>
+            <Insets bottom="16.0" />
+         </VBox.margin>
+      </HBox>
+      <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+         <content>
+            <TilePane fx:id="tilePane" hgap="5.0" prefHeight="420.0" prefWidth="840.0" vgap="5.0" />
+         </content>
+      </ScrollPane>
+      <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="60.0" VBox.vgrow="NEVER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Name:" />
+            <Label text="Description:" GridPane.rowIndex="1" />
+            <TextField fx:id="nameTextField" GridPane.columnIndex="1" />
+            <TextField fx:id="descriptionTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </GridPane>
+      <HBox alignment="BASELINE_LEFT" fillHeight="false" maxHeight="-Infinity" minHeight="-Infinity" prefWidth="830.0" VBox.vgrow="NEVER">
+         <children>
+            <Button fx:id="addPictureButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addPictureAction" text="Add">
+               <HBox.margin>
+                  <Insets left="10.0" right="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="deletePictureButton" mnemonicParsing="false" onAction="#deletePictureAction" text="Delete">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="modifyPictureButton" mnemonicParsing="false" onAction="#modifyPictureAction" text="Modify">
+               <HBox.margin>
+                  <Insets left="5.0" right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets top="30.0" />
+         </VBox.margin>
+      </HBox>
    </children>
-</AnchorPane>
+   <padding>
+      <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+   </padding>
+</VBox>
