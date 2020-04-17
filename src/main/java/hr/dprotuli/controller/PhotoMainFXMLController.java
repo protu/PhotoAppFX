@@ -88,6 +88,7 @@ public class PhotoMainFXMLController implements Initializable {
         for (Picture picture : newPictureList) {
             tilePane.getChildren().add(createImageView(picture));
         }
+        pictures.addAll(newPictureList);
     }
 
     private ImageView createImageView(Picture picture) {
